@@ -2,12 +2,13 @@ package httpgetter
 
 import (
 	"bytes"
-	"domains"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
+
+	"github.com/remotejob/odomains/domains"
 )
 
 func GetAll(token string, urlstr string) []byte {

@@ -1,25 +1,18 @@
 package addnewdomain
 
 import (
-
-"domains"
-//"fmt"
-"httpgetter"
-//"encoding/json"
+	"github.com/remotejob/odomains/domains"
+	"github.com/remotejob/odomains/httpgetter"
 )
 
-func Add(token string,domaincsv domains.Domaincsv) {
-	
-//	fmt.Println(domaincsv)
-	
-	newdomain :=domains.NewDomain{
-		
+func Add(token string, domaincsv domains.Domaincsv) {
+
+	newdomain := domains.NewDomain{
+
 		Name: domaincsv.Name,
-		Ip: domaincsv.Ip,  
-		
+		Ip:   domaincsv.Ip,
 	}
-	
-	
-	httpgetter.PostNewDomain(token,newdomain)		 
-	
+
+	httpgetter.PostNewDomain(token, newdomain)
+
 }

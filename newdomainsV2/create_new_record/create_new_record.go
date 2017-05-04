@@ -1,9 +1,8 @@
 package create_new_record
 
 import (
-	"domains"
-//	"fmt"
-	"httpgetter"
+	"github.com/remotejob/odomains/domains"
+	"github.com/remotejob/odomains/httpgetter"
 )
 
 func Create(token string, domaincsv domains.Domaincsv) {
@@ -21,7 +20,7 @@ func Create(token string, domaincsv domains.Domaincsv) {
 		Data: domaincsv.Name + ".",
 	}
 
-//	fmt.Println(record)
+	//	fmt.Println(record)
 	httpgetter.PostNewRecord(token, newdomain, record)
 
 }

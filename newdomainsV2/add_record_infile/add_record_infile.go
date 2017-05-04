@@ -1,20 +1,21 @@
 package add_record_infile
 
 import (
-	"domains"
 	"os"
+
+	"github.com/remotejob/odomains/domains"
 )
 
 func Add(domaincsv domains.Domaincsv) {
- file, err := os.OpenFile("/home/juno/git/imagehoster_redis/usefull.bash", os.O_APPEND|os.O_WRONLY,0600)
-     if err != nil {
-         panic(err)
-     }
-     defer file.Close()
-     
-     str :="\nbin/contents_feeder_redis --site="+domaincsv.Name+" && sleep 90 && bin/contents_feeder_redis --site=www."+domaincsv.Name+" && sleep 90 && bin/contents_feeder_redis --site=chat."+domaincsv.Name+"\n"
+	file, err := os.OpenFile("/home/juno/git/imagehoster_redis/usefull.bash", os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
 
-     if _, err = file.WriteString(str); err != nil {
-      panic(err)
-     }
+	str := "\nbin/contents_feeder_redis --site=" + domaincsv.Name + " && sleep 90 && bin/contents_feeder_redis --site=www." + domaincsv.Name + " && sleep 90 && bin/contents_feeder_redis --site=chat." + domaincsv.Name + "\n"
+
+	if _, err = file.WriteString(str); err != nil {
+		panic(err)
+	}
 }

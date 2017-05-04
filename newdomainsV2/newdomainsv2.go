@@ -1,16 +1,18 @@
 package main
 
 import (
-	"domains"
 	"encoding/csv"
 	"flag"
 	"fmt"
 	"io"
-	"newdomainsV2/addnewdomain"
-	"newdomainsV2/create_new_record"
-	"newdomainsV2/add_record_infile"
 	"os"
 	"strings"
+
+	"github.com/remotejob/odomains/newdomainsV2/addnewdomain"
+
+	"github.com/remotejob/odomains/newdomainsV2/create_new_record"
+
+	"github.com/remotejob/odomains/domains"
 )
 
 var token string
@@ -36,7 +38,6 @@ func main() {
 
 		token = fields[0]
 		fmt.Println(token)
-
 
 	}
 
@@ -67,8 +68,7 @@ func main() {
 			domaincsv.Ip = fields[3]
 			addnewdomain.Add(token, domaincsv)
 			create_new_record.Create(token, domaincsv)
-			add_record_infile.Add(domaincsv)
-			
+			// add_record_infile.Add(domaincsv)
 
 		}
 
