@@ -1,8 +1,8 @@
 package getalldomainsv2
 
 import (
-	"contentparser"
-	"httpgetter"
+	"github.com/remotejob/odomains/contentparser"
+	"github.com/remotejob/odomains/httpgetter"
 )
 
 func GetAllD(token string, urlstr string) [][]string {

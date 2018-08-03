@@ -1,17 +1,17 @@
 package main
 
 import (
-	"changeip"
-	"dumpintocsv"
+	"github.com/remotejob/odomains/changeip"
+	"github.com/remotejob/odomains/dumpintocsv"
 	"encoding/csv"
 	"flag"
 	"fmt"
-	"getalldomainsv2"
+	"github.com/remotejob/odomains/getalldomainsv2"
 	"io"
 	"os"
 )
 
-const APP_VERSION = "0.1"
+const APP_VERSION = "0.2"
 
 var versionFlag *bool = flag.Bool("v", false, "Print the version number.")
 var fromIpFlag *string = flag.String("fromIp", "", "must be valid ip address")
